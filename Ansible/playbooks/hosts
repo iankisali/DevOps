@@ -1,0 +1,12 @@
+[ungrouped]
+localhost ansible_connection=local
+[webservers]
+172.31.36.74
+172.31.27.145
+
+[appservers]
+172.31.39.100
+172.31.28.163
+
+[jenkins]
+172.31.27.145

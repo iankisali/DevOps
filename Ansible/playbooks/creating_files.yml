@@ -1,0 +1,20 @@
+---
+- name: creating files or directories
+  hosts: all
+  become: true
+  gather_facts: no
+
+  tasks:
+  - name: creating a file
+    file:
+      path: /home/ansadmin/testfile
+      state: touch
+      mode: 0755
+      owner: ansadmin
+    name: creating a directory
+    file:
+      path: /home/ansadmin/testfolder
+      state: directory
+      mode: 0755
+      owner: ansadmin
+
