@@ -1,0 +1,12 @@
+---
+- name: cloning repo
+  hosts: webservers
+  gather_facts: no
+  vars_files:
+    - git_pass.yml
+
+  tasks:
+    - name: cloning a repo
+      git:
+        repo: https://iankisali:{{ git_password }}@github.com/iankisali/maven.git
+        dest: /home/ansadmin/vaulttest
