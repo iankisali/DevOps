@@ -5,7 +5,7 @@
 
  2. Java v1.8.x
 
-## Install Java
+### Install Java
 We will be using open java for our demo, Get latest version from http://openjdk.java.net/install/
 ```sh
 yum install java-1.8*
@@ -31,7 +31,7 @@ OpenJDK Runtime Environment (build 1.8.0_151-b12)
 OpenJDK 64-Bit Server VM (build 25.151-b12, mixed mode)
 ```
 
-## Install Jenkins
+### Install Jenkins
 You can install jenkins using the rpm or by setting up the repo. We will setup the repo so that we can update it easily in future.
 Get latest version of jenkins from https://pkg.jenkins.io/redhat-stable/
 ```sh
@@ -75,3 +75,12 @@ http://YOUR-SERVER-PUBLIC-IP:8080
 1. Save your job 
 1. Build job
 1. Check "console output"
+
+
+# Installing Jenkins using Docker on Ubuntu Server
+
+1. `sudo apt update`
+2. `sudo apt install docker.io`
+3. `docker run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts`
+3. `docker ps`
+4. `docker volume inspect jenkins_home`
