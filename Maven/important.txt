@@ -1,0 +1,7 @@
+sudo dnf install java-11-amazon-corretto -y - installing java 11
+
+/opt/sonarqube-9.9.1.69595/bin/linux-x86-64
+
+/usr/local/jdk-11.0.1/bin/java
+
+/opt/sonarqube-9.9.1.69595/lib/sonar-application-9.9.1.69595.jar
