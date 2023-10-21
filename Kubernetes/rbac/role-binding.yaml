@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: kisali-dev-binding
+subjects:
+- kind: User
+  name: kisali
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: dev
+  apiGroup: rbac.authorization.k8s.io
