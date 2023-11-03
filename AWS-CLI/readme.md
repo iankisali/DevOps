@@ -31,3 +31,11 @@ This command generated two files in `~/.aws/` directory i.e config and credentia
 
 ## Use an existing key-value pair or if you want, create and use a new key-pair. 'KeyMaterial' gives us an unencrypted PEM encoded RSA private key.
 - `aws ec2 create-key-pair --key-name MyKeyPair --query 'KeyMaterial' --output text > MyKeyPair.pem`
+
+## describing subnets
+- `aws ec2 describe-subnets`
+- `subnet-01e0ae6`
+
+## Starting instance with obtained info
+- `aws ec2 run-instances --image-id ami-0ea7dc624e77a15d5 --count 1 --instance-type t2.micro --key-name MyKpCli --security-group-ids sg-09d72bd1d0 --subnet-id subnet-01e0ae66341`
+- `aws ec2 describe-instances`
