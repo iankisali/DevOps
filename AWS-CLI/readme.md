@@ -39,3 +39,18 @@ This command generated two files in `~/.aws/` directory i.e config and credentia
 ## Starting instance with obtained info
 - `aws ec2 run-instances --image-id ami-0ea7dc624e77a15d5 --count 1 --instance-type t2.micro --key-name MyKpCli --security-group-ids sg-09d72bd1d0 --subnet-id subnet-01e0ae66341`
 - `aws ec2 describe-instances`
+
+# Queries and Filters
+## Describing instance using queries and filters
+- `aws ec2 describe-instances --filters "Name=instance-type,Values=t2.small" --query "Reservations[].Instances[].InstanceId"`
+
+## Creating group
+- `aws iam create-group --group-name MyGroupCLI`
+
+## Creating user
+- `aws iam create-user --user-name MyUserCli`
+
+## Adding user to a group
+- `aws iam add-user-to-group --user-name MyUserCli --group-name MyGroupCli`
+
+- `aws iam get-group --group-name MyGroupCli`
