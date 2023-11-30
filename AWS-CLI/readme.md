@@ -54,3 +54,29 @@ This command generated two files in `~/.aws/` directory i.e config and credentia
 - `aws iam add-user-to-group --user-name MyUserCli --group-name MyGroupCli`
 
 - `aws iam get-group --group-name MyGroupCli`
+
+## Listing Policies as text
+
+- `aws iam list-policies --query 'Policies[?PolicyName==`AmazonEC2FullAccess`].{ARN:Arn}' --output text`
+
+## Attaching EC2FullAccessc to group and listing group policies
+
+- `aws iam attach-group-policy --group-name MyGroupCli --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess`
+
+- `aws iam list-attached-group-policies --group-name MyGroupCli`
+
+## Creating and getting login profile for user
+
+- `aws iam create-login-profile --user-name MyUserCli --password Mypwd456 --password-reset-required`
+
+- `aws iam get-user --user-name MyUserCli`
+
+## Attaching IAMUserChangePass to group
+
+- `aws iam attach-group-policy --group-name MyGroupCli --policy-arn arn:aws:iam::aws:policy/IAMUserChangePassword`
+
+## Creating and configuring access keys for user
+
+- `aws iam create-access-key --user-name MyUserCli`
+
+- `aws configure set aws_access_key_id <keyid>`
