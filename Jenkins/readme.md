@@ -10,6 +10,9 @@
 `docker exec -u 0 -it 0c73a1692b75 bash`
 `chmod 666 /var/run/docker.sock`
 
+### Location of Jenkins variables
+```http://54.172.193.90:8080/env-vars.html/ ``` 
+
 ### Configuring git credentials on a Jenkinsfile
 `withCredentials([usernamePassword(credentialsId: 'gitlab-credentials/dockerhub-credentials', passwordVariable: 'PASS', usernameVariable: 'USER')])`<br>
 
